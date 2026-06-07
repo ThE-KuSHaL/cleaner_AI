@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Stripper - Tech Text Filter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <h1>SYS<span class="highlight">.FILTER</span></h1>
+                <span class="badge">v1.0</span>
+            </div>
+            <p class="subtitle">Extract clean content. Remove AI conversational noise.</p>
+        </header>
+        
+        <main class="workspace">
+            <!-- Input Panel -->
+            <section class="panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <div class="status-dot"></div>
+                        <h2>INPUT_DATA</h2>
+                    </div>
+                    <button id="paste-btn" class="action-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
+                        <span>PASTE</span>
+                    </button>
+                </div>
+                <div class="editor-container">
+                    <textarea id="input-text" placeholder="> Awaiting clipboard data..."></textarea>
+                </div>
+            </section>
+
+            <!-- Center Controls -->
+            <div class="controls">
+                <button id="filter-btn" class="primary-btn">
+                    <span class="btn-text">EXECUTE FILTER</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+            </div>
+
+            <!-- Output Panel -->
+            <section class="panel">
+                <div class="panel-header">
+                    <div class="panel-title">
+                        <div class="status-dot out"></div>
+                        <h2>CLEAN_OUTPUT</h2>
+                    </div>
+                    <button id="copy-btn" class="action-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        <span>COPY</span>
+                    </button>
+                </div>
+                <div class="editor-container">
+                    <textarea id="output-text" readonly placeholder="> Processed output will appear here..."></textarea>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Toast Notification -->
+        <div id="toast" class="toast hidden">Action completed successfully.</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
